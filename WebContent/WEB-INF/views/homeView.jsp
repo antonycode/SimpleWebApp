@@ -7,13 +7,18 @@
 <title>Home page</title>
 </head>
 <body>
-	<h2></h2>
 	<jsp:include page="_header.jsp"></jsp:include>
 	<jsp:include page="_menu.jsp"></jsp:include>
+	<h1>Home Page</h1>
+	this webapp using JSP/ SERVLET/ JDBC.
+	
+	<h4>It include flowing some functions: </h4>
 	<ul>
-		<li><a href="#">Home</a></li>
-		<li><a href="#">Login</a></li>
-		<li><a href="#">Produc List</a></li>
+		<li>Login</li>
+		<li>Produc List</li>
+		<li>Create Products</li>
+		<li>Edit Products</li>
+		<li>Delete Products</li>
 	</ul>
 	<jsp:include page="_footer.jsp"></jsp:include>
 

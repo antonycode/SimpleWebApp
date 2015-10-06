@@ -21,7 +21,7 @@ import org.o7planning.simplewebapp.utils.MyUtils;
 /**
  * Servlet Filter implementation class CookieFilter
  */
-@WebFilter(filterName = "/CookieFilter", urlPatterns = "/*")
+@WebFilter(filterName = "/cookieFilter", urlPatterns = "/*")
 public class CookieFilter implements Filter {
 
 	/**

@@ -21,7 +21,7 @@ import org.o7planning.simplewebapp.utils.MyUtils;
 /**
  * Servlet Filter implementation class JDBCFilter
  */
-@WebFilter(filterName = "/JDBCFilter", urlPatterns = "/*")
+@WebFilter(filterName = "/jdbcFilter", urlPatterns = "/*")
 public class JDBCFilter implements Filter {
 
 	/**
