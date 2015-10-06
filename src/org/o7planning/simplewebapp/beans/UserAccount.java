@@ -1,6 +1,6 @@
 package org.o7planning.simplewebapp.beans;
 
-public class UserAcount {
+public class UserAccount {
 	public static final String GENDER_MALE = "M";
 	public static final String GENDER_FEMALE = "F";
 	
@@ -8,7 +8,7 @@ public class UserAcount {
 	private String password;
 	private String gender;
 	
-	public UserAcount() {
+	public UserAccount() {
 		// TODO Auto-generated constructor stub
 	}
 	
