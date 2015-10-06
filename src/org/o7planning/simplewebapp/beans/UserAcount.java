@@ -11,7 +11,7 @@ public class UserAcount {
 	public UserAcount() {
 		// TODO Auto-generated constructor stub
 	}
-
+	
 	public String getUserName() {
 		return userName;
 	}

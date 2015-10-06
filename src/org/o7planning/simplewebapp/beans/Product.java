@@ -8,6 +8,12 @@ public class Product {
 	public Product() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Product(String code, String name, float price) {
+		this.code = code;
+		this.name = name;
+		this.price = price;
+	}
 
 	public String getCode() {
 		return code;
