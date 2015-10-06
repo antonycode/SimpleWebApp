@@ -8,18 +8,22 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.o7planning.simplewebapp.beans.UserAccount;
+import org.o7planning.simplewebapp.utils.MyUtils;
 
 /**
- * Servlet implementation class HomeServlet
+ * Servlet implementation class UserInfoServlet
  */
-@WebServlet(urlPatterns = {"/home"})
-public class HomeServlet extends HttpServlet {
+@WebServlet("/userInfo")
+public class UserInfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public HomeServlet() {
+	public UserInfoServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -29,10 +33,23 @@ public class HomeServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		// Forward toi trang /WEB-INF/views/homeView.jsp
-		// (Người dùng không bao giờ truy cập trực tiếp được vào các trang JSP
-		// đặt trong WEB-INF)
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/homeView.jsp");
+		//get session
+		HttpSession session = request.getSession();
+		//check User has logged on
+		UserAccount loginedUser = MyUtils.getLoginedUser(session);
+
+		//If not Logined
+		if (loginedUser == null) {
+			//redirect to Login page
+			response.sendRedirect(request.getContextPath() + "/login");
+			return;
+		}
+
+		// stored info at Attribute
+		request.setAttribute("user", loginedUser);
+
+		//Logined, forward to /WEB-INF/views/userInfoView.jsp
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/userInfoView.jsp");
 		dispatcher.forward(request, response);
 	}
 

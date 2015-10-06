@@ -10,30 +10,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class HomeServlet
+ * Servlet implementation class LoginServlet
  */
-@WebServlet(urlPatterns = {"/home"})
-public class HomeServlet extends HttpServlet {
+@WebServlet(urlPatterns = {"/login"})
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public HomeServlet() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public LoginServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		// Forward toi trang /WEB-INF/views/homeView.jsp
-		// (Người dùng không bao giờ truy cập trực tiếp được vào các trang JSP
-		// đặt trong WEB-INF)
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/homeView.jsp");
+		//Forward to /WEB-INF/views/loginView.jsp
+		//user can not access directly into JSP page placed in /WEB-INF 
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/loginView.jsp");
 		dispatcher.forward(request, response);
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
