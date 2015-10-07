@@ -93,7 +93,7 @@ public class DoLoginServlet extends HttpServlet {
 			}
 			
 			//redirected to User Info Page
-			response.sendRedirect(request.getContextPath() + "userInfo");
+			response.sendRedirect(request.getContextPath() + "/userInfo");
 		}
 	}
 
